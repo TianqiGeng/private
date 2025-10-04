@@ -32,6 +32,9 @@ There are some bugs in this code and features we need to add. To make sure you h
 
 Setting up the repo
 * You will be cloning my repo but working on your own. To do this, you must first setup your own personal Github account and create a **PRIVATE** repo called `comp3900_git_primer`. Please **do not fork this repo**.
+create a **PRIVATE** repo at github
+`git clone the comp3900_git_primer` to your laptop
+
 * Next, clone this repo (the one we are currently in NOT your private one) and then `cd git-Primer` to go into the repo.
 * We are going to transfer this to your Github repo. To do this, use the command `git remote set-url origin git@github.com:GITHUB_USERNAME/REPO_NAME.git` replacing `GITHUB_USERNAME` and `REPO_NAME` with the ones for the repo you created.
 * Now run `git push` and you can get started with the exercise.
@@ -40,6 +43,20 @@ Setting up the repo
 2. You will need to show your tutor you made this change so **DO NOT merge this branch into `main` or delete it.** However, you should push it to the remote branch using `git push`.
 3. We are going to create a new branch based off the one we are currently on to fix some other issues. Use `git checkout -b welcome_and_calculator_fix` to switch to a new branch where we will debug the calculator. If you try using the calculator right now, you will see that it does not add the numbers but instead multiplies them.
 4. Fix this issue and then commit your change to git. This time, we want to merge a branch called `incorrect_branch_name` into this branch (`welcome_and_calculator_fix`) using `git merge origin/incorrect_branch_name --allow-unrelated-histories`. However, when you try to merge it in, you will encounter a merge conflict as there are already changes in the other branch. Remove the other branch's changes and replace them with your fix to the COMP[39]900 welcome message.
+`git checkout -b welcome_and_calculator_fix`
+merge
+`git merge origin/incorrect_branch_name --allow-unrelated-histories`
+figure out the conflict
+add the content on your vscode 
+`git add`
+`git commit -m "xxx"`
+
+
 5. You also notice your teammate has merged a .env file containing your secret `API key`, gross! Remove the problematic file from the staging area with `git rm --cached .env` and create a .gitignore file to exclude .env files! Add the newly created file with `git add .gitignore`, then commit and merge this change with a meaningful [conventional commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) message.
+
+`git rm --cached .env`
+create file .gitignore
+".env"
+
 7. Once the code has been merged, push it to Github (the remote version of your branch) using `git push`. If it tells you your branch does not have a remote version, then use the suggested command it gives you.
 8. Now, on Github it will give you a message saying there were recent changes to a branch and ask you if you want to submit a pull request. Create the pull request but **DO NOT** accept it. You will need to show your tutor the unapproved pull request.
